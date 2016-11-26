@@ -44,5 +44,12 @@ namespace EmergencyAmbulance_CentralAlarmas_WF
             ae.MdiParent = this;
             ae.Show();
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            ListasEmergencias le = new ListasEmergencias(Datos);
+            le.MdiParent = this;
+            le.Show();
+        }
     }
 }
