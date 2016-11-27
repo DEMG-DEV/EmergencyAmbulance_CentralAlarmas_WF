@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.emergencyDataSet = new EmergencyAmbulance_CentralAlarmas_WF.emergencyDataSet();
             this.emergenciasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.emergencyDataSet = new EmergencyAmbulance_CentralAlarmas_WF.emergencyDataSet();
             this.emergenciasTableAdapter = new EmergencyAmbulance_CentralAlarmas_WF.emergencyDataSetTableAdapters.emergenciasTableAdapter();
             this.idEmergenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.calleEmergenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,9 +43,10 @@
             this.estadoEmergenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.entreCallesEmergenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.otrasReferenciasEmergenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ubicacionEmergencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emergencyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emergenciasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emergencyDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -69,7 +70,8 @@
             this.ciudadEmergenciaDataGridViewTextBoxColumn,
             this.estadoEmergenciaDataGridViewTextBoxColumn,
             this.entreCallesEmergenciaDataGridViewTextBoxColumn,
-            this.otrasReferenciasEmergenciaDataGridViewTextBoxColumn});
+            this.otrasReferenciasEmergenciaDataGridViewTextBoxColumn,
+            this.ubicacionEmergencia});
             this.dataGridView1.DataSource = this.emergenciasBindingSource;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkCyan;
@@ -86,15 +88,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(904, 382);
             this.dataGridView1.TabIndex = 0;
             // 
-            // emergencyDataSet
-            // 
-            this.emergencyDataSet.DataSetName = "emergencyDataSet";
-            this.emergencyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // emergenciasBindingSource
             // 
             this.emergenciasBindingSource.DataMember = "emergencias";
             this.emergenciasBindingSource.DataSource = this.emergencyDataSet;
+            // 
+            // emergencyDataSet
+            // 
+            this.emergencyDataSet.DataSetName = "emergencyDataSet";
+            this.emergencyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // emergenciasTableAdapter
             // 
@@ -172,6 +174,14 @@
             this.otrasReferenciasEmergenciaDataGridViewTextBoxColumn.ReadOnly = true;
             this.otrasReferenciasEmergenciaDataGridViewTextBoxColumn.Width = 300;
             // 
+            // ubicacionEmergencia
+            // 
+            this.ubicacionEmergencia.DataPropertyName = "ubicacionEmergencia";
+            this.ubicacionEmergencia.HeaderText = "Ubicacion";
+            this.ubicacionEmergencia.Name = "ubicacionEmergencia";
+            this.ubicacionEmergencia.ReadOnly = true;
+            this.ubicacionEmergencia.Width = 200;
+            // 
             // ListasEmergencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,8 +193,8 @@
             this.Text = "ListasEmergencias";
             this.Load += new System.EventHandler(this.ListasEmergencias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emergencyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emergenciasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emergencyDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -204,5 +214,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn estadoEmergenciaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn entreCallesEmergenciaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn otrasReferenciasEmergenciaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ubicacionEmergencia;
     }
 }

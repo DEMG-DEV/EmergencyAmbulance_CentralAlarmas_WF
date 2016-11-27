@@ -297,6 +297,8 @@ namespace EmergencyAmbulance_CentralAlarmas_WF {
             
             private global::System.Data.DataColumn columnotrasReferenciasEmergencia;
             
+            private global::System.Data.DataColumn columnubicacionEmergencia;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public emergenciasDataTable() {
@@ -404,6 +406,14 @@ namespace EmergencyAmbulance_CentralAlarmas_WF {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ubicacionEmergenciaColumn {
+                get {
+                    return this.columnubicacionEmergencia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -439,7 +449,7 @@ namespace EmergencyAmbulance_CentralAlarmas_WF {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public emergenciasRow AddemergenciasRow(string calleEmergencia, string coloniaEmergencia, int numeroEmergencia, int cpEmergencia, string ciudadEmergencia, string estadoEmergencia, string entreCallesEmergencia, string otrasReferenciasEmergencia) {
+            public emergenciasRow AddemergenciasRow(string calleEmergencia, string coloniaEmergencia, int numeroEmergencia, int cpEmergencia, string ciudadEmergencia, string estadoEmergencia, string entreCallesEmergencia, string otrasReferenciasEmergencia, string ubicacionEmergencia) {
                 emergenciasRow rowemergenciasRow = ((emergenciasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -450,7 +460,8 @@ namespace EmergencyAmbulance_CentralAlarmas_WF {
                         ciudadEmergencia,
                         estadoEmergencia,
                         entreCallesEmergencia,
-                        otrasReferenciasEmergencia};
+                        otrasReferenciasEmergencia,
+                        ubicacionEmergencia};
                 rowemergenciasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowemergenciasRow);
                 return rowemergenciasRow;
@@ -489,6 +500,7 @@ namespace EmergencyAmbulance_CentralAlarmas_WF {
                 this.columnestadoEmergencia = base.Columns["estadoEmergencia"];
                 this.columnentreCallesEmergencia = base.Columns["entreCallesEmergencia"];
                 this.columnotrasReferenciasEmergencia = base.Columns["otrasReferenciasEmergencia"];
+                this.columnubicacionEmergencia = base.Columns["ubicacionEmergencia"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -512,6 +524,8 @@ namespace EmergencyAmbulance_CentralAlarmas_WF {
                 base.Columns.Add(this.columnentreCallesEmergencia);
                 this.columnotrasReferenciasEmergencia = new global::System.Data.DataColumn("otrasReferenciasEmergencia", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnotrasReferenciasEmergencia);
+                this.columnubicacionEmergencia = new global::System.Data.DataColumn("ubicacionEmergencia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnubicacionEmergencia);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidEmergencia}, true));
                 this.columnidEmergencia.AutoIncrement = true;
@@ -525,6 +539,7 @@ namespace EmergencyAmbulance_CentralAlarmas_WF {
                 this.columnestadoEmergencia.MaxLength = 200;
                 this.columnentreCallesEmergencia.MaxLength = 500;
                 this.columnotrasReferenciasEmergencia.MaxLength = 500;
+                this.columnubicacionEmergencia.MaxLength = 300;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -807,6 +822,22 @@ namespace EmergencyAmbulance_CentralAlarmas_WF {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ubicacionEmergencia {
+                get {
+                    try {
+                        return ((string)(this[this.tableemergencias.ubicacionEmergenciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ubicacionEmergencia\' in table \'emergencias\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableemergencias.ubicacionEmergenciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IscalleEmergenciaNull() {
                 return this.IsNull(this.tableemergencias.calleEmergenciaColumn);
             }
@@ -899,6 +930,18 @@ namespace EmergencyAmbulance_CentralAlarmas_WF {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetotrasReferenciasEmergenciaNull() {
                 this[this.tableemergencias.otrasReferenciasEmergenciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsubicacionEmergenciaNull() {
+                return this.IsNull(this.tableemergencias.ubicacionEmergenciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetubicacionEmergenciaNull() {
+                this[this.tableemergencias.ubicacionEmergenciaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1070,10 +1113,11 @@ namespace EmergencyAmbulance_CentralAlarmas_WF.emergencyDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("estadoEmergencia", "estadoEmergencia");
             tableMapping.ColumnMappings.Add("entreCallesEmergencia", "entreCallesEmergencia");
             tableMapping.ColumnMappings.Add("otrasReferenciasEmergencia", "otrasReferenciasEmergencia");
+            tableMapping.ColumnMappings.Add("ubicacionEmergencia", "ubicacionEmergencia");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `emergencias` WHERE ((`idEmergencia` = @p1) AND ((@p2 = 1 AND `calleEmergencia` IS NULL) OR (`calleEmergencia` = @p3)) AND ((@p4 = 1 AND `coloniaEmergencia` IS NULL) OR (`coloniaEmergencia` = @p5)) AND ((@p6 = 1 AND `numeroEmergencia` IS NULL) OR (`numeroEmergencia` = @p7)) AND ((@p8 = 1 AND `cpEmergencia` IS NULL) OR (`cpEmergencia` = @p9)) AND ((@p10 = 1 AND `ciudadEmergencia` IS NULL) OR (`ciudadEmergencia` = @p11)) AND ((@p12 = 1 AND `estadoEmergencia` IS NULL) OR (`estadoEmergencia` = @p13)) AND ((@p14 = 1 AND `entreCallesEmergencia` IS NULL) OR (`entreCallesEmergencia` = @p15)) AND ((@p16 = 1 AND `otrasReferenciasEmergencia` IS NULL) OR (`otrasReferenciasEmergencia` = @p17)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `emergencias` WHERE ((`idEmergencia` = @p1) AND ((@p2 = 1 AND `calleEmergencia` IS NULL) OR (`calleEmergencia` = @p3)) AND ((@p4 = 1 AND `coloniaEmergencia` IS NULL) OR (`coloniaEmergencia` = @p5)) AND ((@p6 = 1 AND `numeroEmergencia` IS NULL) OR (`numeroEmergencia` = @p7)) AND ((@p8 = 1 AND `cpEmergencia` IS NULL) OR (`cpEmergencia` = @p9)) AND ((@p10 = 1 AND `ciudadEmergencia` IS NULL) OR (`ciudadEmergencia` = @p11)) AND ((@p12 = 1 AND `estadoEmergencia` IS NULL) OR (`estadoEmergencia` = @p13)) AND ((@p14 = 1 AND `entreCallesEmergencia` IS NULL) OR (`entreCallesEmergencia` = @p15)) AND ((@p16 = 1 AND `otrasReferenciasEmergencia` IS NULL) OR (`otrasReferenciasEmergencia` = @p17)) AND ((@p18 = 1 AND `ubicacionEmergencia` IS NULL) OR (`ubicacionEmergencia` = @p19)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -1219,12 +1263,26 @@ namespace EmergencyAmbulance_CentralAlarmas_WF.emergencyDataSetTableAdapters {
             param.SourceColumn = "otrasReferenciasEmergencia";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p18";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "ubicacionEmergencia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p19";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "ubicacionEmergencia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `emergencias` (`calleEmergencia`, `coloniaEmergencia`, `numeroEmergen" +
-                "cia`, `cpEmergencia`, `ciudadEmergencia`, `estadoEmergencia`, `entreCallesEmerge" +
-                "ncia`, `otrasReferenciasEmergencia`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, " +
-                "@p8)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO `emergencias` (`calleEmergencia`, `coloniaEmergencia`, `numeroEmergencia`, `cpEmergencia`, `ciudadEmergencia`, `estadoEmergencia`, `entreCallesEmergencia`, `otrasReferenciasEmergencia`, `ubicacionEmergencia`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -1282,9 +1340,16 @@ namespace EmergencyAmbulance_CentralAlarmas_WF.emergencyDataSetTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "otrasReferenciasEmergencia";
             this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p9";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "ubicacionEmergencia";
+            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `emergencias` SET `calleEmergencia` = @p1, `coloniaEmergencia` = @p2, `numeroEmergencia` = @p3, `cpEmergencia` = @p4, `ciudadEmergencia` = @p5, `estadoEmergencia` = @p6, `entreCallesEmergencia` = @p7, `otrasReferenciasEmergencia` = @p8 WHERE ((`idEmergencia` = @p9) AND ((@p10 = 1 AND `calleEmergencia` IS NULL) OR (`calleEmergencia` = @p11)) AND ((@p12 = 1 AND `coloniaEmergencia` IS NULL) OR (`coloniaEmergencia` = @p13)) AND ((@p14 = 1 AND `numeroEmergencia` IS NULL) OR (`numeroEmergencia` = @p15)) AND ((@p16 = 1 AND `cpEmergencia` IS NULL) OR (`cpEmergencia` = @p17)) AND ((@p18 = 1 AND `ciudadEmergencia` IS NULL) OR (`ciudadEmergencia` = @p19)) AND ((@p20 = 1 AND `estadoEmergencia` IS NULL) OR (`estadoEmergencia` = @p21)) AND ((@p22 = 1 AND `entreCallesEmergencia` IS NULL) OR (`entreCallesEmergencia` = @p23)) AND ((@p24 = 1 AND `otrasReferenciasEmergencia` IS NULL) OR (`otrasReferenciasEmergencia` = @p25)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `emergencias` SET `calleEmergencia` = @p1, `coloniaEmergencia` = @p2, `numeroEmergencia` = @p3, `cpEmergencia` = @p4, `ciudadEmergencia` = @p5, `estadoEmergencia` = @p6, `entreCallesEmergencia` = @p7, `otrasReferenciasEmergencia` = @p8, `ubicacionEmergencia` = @p9 WHERE ((`idEmergencia` = @p10) AND ((@p11 = 1 AND `calleEmergencia` IS NULL) OR (`calleEmergencia` = @p12)) AND ((@p13 = 1 AND `coloniaEmergencia` IS NULL) OR (`coloniaEmergencia` = @p14)) AND ((@p15 = 1 AND `numeroEmergencia` IS NULL) OR (`numeroEmergencia` = @p16)) AND ((@p17 = 1 AND `cpEmergencia` IS NULL) OR (`cpEmergencia` = @p18)) AND ((@p19 = 1 AND `ciudadEmergencia` IS NULL) OR (`ciudadEmergencia` = @p20)) AND ((@p21 = 1 AND `estadoEmergencia` IS NULL) OR (`estadoEmergencia` = @p22)) AND ((@p23 = 1 AND `entreCallesEmergencia` IS NULL) OR (`entreCallesEmergencia` = @p24)) AND ((@p25 = 1 AND `otrasReferenciasEmergencia` IS NULL) OR (`otrasReferenciasEmergencia` = @p26)) AND ((@p27 = 1 AND `ubicacionEmergencia` IS NULL) OR (`ubicacionEmergencia` = @p28)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -1344,6 +1409,13 @@ namespace EmergencyAmbulance_CentralAlarmas_WF.emergencyDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p9";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "ubicacionEmergencia";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p10";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -1351,24 +1423,24 @@ namespace EmergencyAmbulance_CentralAlarmas_WF.emergencyDataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p10";
+            param.ParameterName = "@p11";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "calleEmergencia";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p11";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "calleEmergencia";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p12";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "calleEmergencia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p13";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -1377,21 +1449,12 @@ namespace EmergencyAmbulance_CentralAlarmas_WF.emergencyDataSetTableAdapters {
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p13";
+            param.ParameterName = "@p14";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "coloniaEmergencia";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p14";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "numeroEmergencia";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p15";
@@ -1400,15 +1463,15 @@ namespace EmergencyAmbulance_CentralAlarmas_WF.emergencyDataSetTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "numeroEmergencia";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p16";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "cpEmergencia";
+            param.SourceColumn = "numeroEmergencia";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p17";
@@ -1417,18 +1480,27 @@ namespace EmergencyAmbulance_CentralAlarmas_WF.emergencyDataSetTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "cpEmergencia";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p18";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "ciudadEmergencia";
+            param.SourceColumn = "cpEmergencia";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p19";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "ciudadEmergencia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p20";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -1436,33 +1508,33 @@ namespace EmergencyAmbulance_CentralAlarmas_WF.emergencyDataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p20";
+            param.ParameterName = "@p21";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "estadoEmergencia";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p21";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "estadoEmergencia";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p22";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "entreCallesEmergencia";
+            param.SourceColumn = "estadoEmergencia";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p23";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "entreCallesEmergencia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p24";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -1470,7 +1542,7 @@ namespace EmergencyAmbulance_CentralAlarmas_WF.emergencyDataSetTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p24";
+            param.ParameterName = "@p25";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -1479,11 +1551,28 @@ namespace EmergencyAmbulance_CentralAlarmas_WF.emergencyDataSetTableAdapters {
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p25";
+            param.ParameterName = "@p26";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "otrasReferenciasEmergencia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p27";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "ubicacionEmergencia";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p28";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "ubicacionEmergencia";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -1501,9 +1590,9 @@ namespace EmergencyAmbulance_CentralAlarmas_WF.emergencyDataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `idEmergencia`, `calleEmergencia`, `coloniaEmergencia`, `numeroEmergencia`" +
-                ", `cpEmergencia`, `ciudadEmergencia`, `estadoEmergencia`, `entreCallesEmergencia" +
-                "`, `otrasReferenciasEmergencia` FROM `emergencias`";
+            this._commandCollection[0].CommandText = "SELECT idEmergencia, calleEmergencia, coloniaEmergencia, numeroEmergencia, cpEmer" +
+                "gencia, ciudadEmergencia, estadoEmergencia, entreCallesEmergencia, otrasReferenc" +
+                "iasEmergencia,ubicacionEmergencia FROM emergencias";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1564,7 +1653,7 @@ namespace EmergencyAmbulance_CentralAlarmas_WF.emergencyDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int p1, string p3, string p5, global::System.Nullable<int> p7, global::System.Nullable<int> p9, string p11, string p13, string p15, string p17) {
+        public virtual int Delete(int p1, string p3, string p5, global::System.Nullable<int> p7, global::System.Nullable<int> p9, string p11, string p13, string p15, string p17, string p19) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
             if ((p3 == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -1630,6 +1719,14 @@ namespace EmergencyAmbulance_CentralAlarmas_WF.emergencyDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(p17));
             }
+            if ((p19 == null)) {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(p19));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1650,7 +1747,7 @@ namespace EmergencyAmbulance_CentralAlarmas_WF.emergencyDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string p1, string p2, global::System.Nullable<int> p3, global::System.Nullable<int> p4, string p5, string p6, string p7, string p8) {
+        public virtual int Insert(string p1, string p2, global::System.Nullable<int> p3, global::System.Nullable<int> p4, string p5, string p6, string p7, string p8, string p9) {
             if ((p1 == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1699,6 +1796,12 @@ namespace EmergencyAmbulance_CentralAlarmas_WF.emergencyDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = ((string)(p8));
             }
+            if ((p9 == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(p9));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1728,15 +1831,17 @@ namespace EmergencyAmbulance_CentralAlarmas_WF.emergencyDataSetTableAdapters {
                     string p6, 
                     string p7, 
                     string p8, 
-                    int p9, 
-                    string p11, 
-                    string p13, 
-                    global::System.Nullable<int> p15, 
-                    global::System.Nullable<int> p17, 
-                    string p19, 
-                    string p21, 
-                    string p23, 
-                    string p25) {
+                    string p9, 
+                    int p10, 
+                    string p12, 
+                    string p14, 
+                    global::System.Nullable<int> p16, 
+                    global::System.Nullable<int> p18, 
+                    string p20, 
+                    string p22, 
+                    string p24, 
+                    string p26, 
+                    string p28) {
             if ((p1 == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1785,70 +1890,84 @@ namespace EmergencyAmbulance_CentralAlarmas_WF.emergencyDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(p8));
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(p9));
-            if ((p11 == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            if ((p9 == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(p11));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(p9));
             }
-            if ((p13 == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(p13));
-            }
-            if ((p15.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(p15.Value));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(p10));
+            if ((p12 == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(p12));
             }
-            if ((p17.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(p17.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            if ((p19 == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            if ((p14 == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(p19));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(p14));
             }
-            if ((p21 == null)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(p21));
-            }
-            if ((p23 == null)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            if ((p16.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(p16.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(p23));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            if ((p25 == null)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            if ((p18.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(p18.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(p25));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((p20 == null)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(p20));
+            }
+            if ((p22 == null)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(p22));
+            }
+            if ((p24 == null)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(p24));
+            }
+            if ((p26 == null)) {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(p26));
+            }
+            if ((p28 == null)) {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(p28));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
